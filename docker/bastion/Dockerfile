@@ -8,7 +8,7 @@ RUN useradd maintenance-user && \
   chmod 0700 /home/maintenance-user/.ssh && \
   echo "$ssh_public_key" > /home/maintenance-user/.ssh/authorized_keys && \
   echo "AllowUsers maintenance-user" >> /etc/ssh/sshd_config && \
-  chown -R maintenance-user /home/maintenance-user/.ssh && \
+  chown -R maintenance-user /home/maintenance-user && \
   mkdir /run/sshd 
 
 EXPOSE 22

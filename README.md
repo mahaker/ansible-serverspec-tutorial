@@ -16,6 +16,6 @@ docker compose build --build-arg ssh_public_key="$(cat ./keys/bastion/id_rsa.pub
 docker compose up -d
 
 # Test
-ssh maintenance-user@localhost -p 22222 -i ./keys/bastion/id_rsa
+ssh maintenance-user@192.168.49.100 -p 22222 -i ./keys/bastion/id_rsa
 ```
 

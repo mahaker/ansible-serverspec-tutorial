@@ -18,5 +18,6 @@ docker compose up -d
 # Test
 ssh maintenance-user@192.168.49.100 -p 22222 -i ./keys/bastion/id_rsa
 ansible demoservers -m ping -i inventory.yml -u maintenance-user
+ansible-playbook -i inventory.yml playbook-bastion.yml
 ```
 

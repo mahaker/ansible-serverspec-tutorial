@@ -1,0 +1,11 @@
+- name: My first play
+  hosts: demoservers
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Hello world
+   - name: Create file
+     shell: echo "I'm ansible" > hoge.txt
+

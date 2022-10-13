@@ -2,6 +2,7 @@ version: "3.9"
 services:
   bastion:
     build: ./docker/bastion
+    image: tutorial-bastion
     container_name: "ansible-tutorial-bastion"
     tty: true
     ports:

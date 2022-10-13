@@ -8,4 +8,9 @@
        msg: Hello world
    - name: Create file
      shell: echo "I'm ansible" > hoge.txt
+   - name: Install OpenJDK
+     ansible.builtin.apt:
+       name: openjdk-17-jdk
+       update_cache: yes
+     become: true
 

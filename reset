@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+docker rm $(docker stop $(docker ps -a -q --filter ancestor=tutorial-bastion --format="{{.ID}}"))
+docker network rm ansible-tutorial_bastion_network
+

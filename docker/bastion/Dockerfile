@@ -15,6 +15,7 @@ RUN groupadd -g 1000 maintenance-user && \
   mkdir /run/sshd 
 
 EXPOSE 22
+EXPOSE 8080
 
 CMD /usr/sbin/sshd -D
 

@@ -5,8 +5,11 @@ services:
     image: tutorial-bastion
     container_name: "ansible-tutorial-bastion"
     tty: true
+    command: /sbin/init 
+    privileged: true
     ports:
       - "22222:22"
+      - "8888:8080"
     networks:
       bastion_network:
         ipv4_address: 192.168.49.1

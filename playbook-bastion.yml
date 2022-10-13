@@ -13,4 +13,27 @@
        name: openjdk-17-jdk
        update_cache: yes
      become: true
+   - name: Create webapp dir
+     ansible.builtin.file:
+       path: /var/lib/myapp
+       state: directory
+       owner: maintenance-user
+     become: true
+   - name: Copy jar
+     ansible.builtin.copy:
+       src: ./app/build/libs/demo-0.0.1-SNAPSHOT.jar
+       dest: /var/lib/myapp/webapp.jar
+       mode: 0544
+   - name: Copy service unit
+     ansible.builtin.copy:
+       src: ./app/myapp.service
+       dest: /etc/systemd/system/myapp.service
+       mode: 0444
+     become: true
+   - name: Start app
+     ansible.builtin.systemd:
+       name: myapp
+       state: started
+       enabled: yes
+     become: true
 

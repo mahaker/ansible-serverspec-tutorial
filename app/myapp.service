@@ -1,0 +1,9 @@
+[Unit]
+Description=Demo app
+
+[Service]
+ExecStart=java -jar /var/lib/myapp/webapp.jar
+
+[Install]
+WantedBy=multi-user.target
+
